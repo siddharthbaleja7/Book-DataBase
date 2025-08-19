@@ -22,6 +22,7 @@ public class driver {
             System.out.println("2. List all authors");
             System.out.println("3. Show books by an author");
             System.out.println("4. Show books with a specific rating");
+            System.out.println("5. Show Prices of books by an author");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
@@ -54,6 +55,20 @@ public class driver {
                     System.out.println("\nBooks with rating " + rating + ":");
                     for (Book b : BookService.getBooksByRating(books, rating)) {
                         b.printDetails();
+                    }
+                    break;
+
+                case 5:
+                    System.out.print("Enter author name: ");
+                    String author = sc.nextLine();
+                    ArrayList<String> booksAndPrices = BookService.getBooksAndPricesByAuthor(books, author);
+                    if (booksAndPrices.isEmpty()) {
+                        System.out.println("No books found for author: " + author);
+                    } else {
+                        System.out.println("\nBooks and Prices by " + author + ":");
+                        for (String bookPrice : booksAndPrices) {
+                            System.out.println("- " + bookPrice);
+                        }
                     }
                     break;
 

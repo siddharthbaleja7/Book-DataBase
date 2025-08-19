@@ -39,6 +39,29 @@ public class Book {
         return genre; 
     }
 
+
+    public void setTitle(String title) { 
+        this.title = title; 
+    }
+    public void setAuthor(String author) { 
+        this.author = author; 
+    }
+    public void setUserRating(double userRating) { 
+        this.userRating = userRating; 
+    }
+    public void setReviews(int reviews) { 
+        this.reviews = reviews; 
+    }
+    public void setPrice(int price) { 
+        this.price = price; 
+    }
+    public void setYear(int year) { 
+        this.year = year; 
+    }
+    public void setGenre(String genre) { 
+        this.genre = genre; 
+    }
+
     public void printDetails() {
         System.out.println("Title: " + title + ", Author: " + author + ", Rating: " + userRating + ", Reviews: " + reviews + ", Price: $" + price + ", Year: " + year + ", Genre: " + genre);
     }

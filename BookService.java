@@ -62,4 +62,14 @@ public class BookService {
         }
         return result;
     }
+    public static ArrayList<String> getBooksAndPricesByAuthor(ArrayList<Book> books, String author) {
+        ArrayList<String> result = new ArrayList<>();
+        for (Book b : books) {
+            if (b.getAuthor().equals(author)) {
+                result.add(b.getTitle() + " - $" + b.getPrice());
+            }
+        }
+        return result;
+    }
+
 }
